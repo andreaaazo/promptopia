@@ -1,12 +1,12 @@
 import mongoose from 'mongoose';
 
-let isConnected = false;
+let isConnected = false; // track the connection
 
-export default async function connectToDB() {
+export const connectToDB = async () => {
   mongoose.set('strictQuery', true);
 
   if (isConnected) {
-    console.log('Connecting to');
+    console.log('MongoDB is already connected');
     return;
   }
 
@@ -23,4 +23,4 @@ export default async function connectToDB() {
   } catch (error) {
     console.log(error);
   }
-}
+};
