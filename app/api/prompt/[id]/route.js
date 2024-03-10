@@ -40,7 +40,7 @@ export const DELETE = async (request, { params }) => {
   try {
     await connectToDB();
 
-    await Prompt.findByIdAndDelete(params.id);
+    await Prompt.findByIdAndDelete;
 
     return new Response('Prompt deleted successfully', { status: 200 });
   } catch (error) {
